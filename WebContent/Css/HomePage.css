@@ -1,0 +1,196 @@
+@charset "ISO-8859-1";
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#container{
+	width: 100%;
+	height: 1600px;
+}
+
+#header{
+	width: 100%;
+	height: 15%;
+	background-color: green;
+}
+
+#content{
+	width: 100%;
+	height: 75%;
+}
+
+#footer{
+	width: 100%;
+	height: 10%;
+	background-color: pink;
+}
+
+#content_Left{
+	float: left;
+	width: 26%;
+}
+
+#content_Right{
+	float: left;
+	width: 74%;
+}
+.item {
+	display: block;
+	float: none;
+	clear: both;
+	z-index: 99998;
+	border-top: #ccc solid 1px;
+	background: none;
+	background-color: #fff;
+	margin: 0;
+	padding: 1px;
+	background-image: url("../images/1.png");
+	background-repeat: no-repeat;
+	color: #000;
+	cursor: pointer;
+	height: 32px;
+	line-height: 39px;
+	padding-left: 41px;
+	width: 180px;
+	float: left;
+	padding-top: 5px;
+	color: #464646;
+	font-weight: bold;
+	margin-right: 17px;
+	text-align: left;
+}
+
+.accordion2 ul {
+	list-style-type: none;
+	margin: 0px;
+	display: none;
+	width: 224px;
+	float: left;
+	left: 0px;
+	top: 0;
+}
+
+.accordion2 ul li {
+	padding: 0px;
+}
+
+.accordion2 {
+	width: 500px;
+	height: 300px;
+}
+
+.item:hover {
+	background-image: url("../images/2.png");
+	background-repeat: no-repeat;
+	display: block;
+}
+/* End css leftPage*/
+
+.rsSpacerCell{
+			line-height: 13px;
+			vertical-align: middle;
+			border-width: 0 1px 1px 0;
+			border-style: solid;
+			overflow: hidden;
+			text-align: center;
+		}
+
+		.rsSpacerCell div{
+			min-width: 52px;
+
+		}
+
+		.rsDateHeader{
+			padding: 1px 4px 3px;
+			text-decoration: none;
+			font-size: 13px;
+		}
+
+		a.rsDateHeader:hover{
+			text-decoration: underline;
+		}
+
+		.rsAllDayHeader{
+			line-height: 13px;
+			border-width: 0 1px 1px 0;
+			border-style: solid;
+		}
+
+		.rsAllDayHeader div{
+			min-width: 52px;
+		}
+
+		.rsHorizontalHeaderWrapper{
+			overflow: hidden;
+			height: 23px;
+		}
+
+		.rsInnerFix{
+			margin-right: 17px;
+			margin-right: 0;
+			margin-right: 0px !important;
+			zoom: 1;
+			height: 23px;
+		}
+
+		.rsAllDayTable{
+			overflow: hidden;
+			line-height: 13px;
+			table-layout: fixed;
+		}
+
+		.rsWrap{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			height: 25px;
+		}
+		tr{
+			display: table-row;
+		}
+		table{
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		td{
+			border-width: 0 1px 1px 0;
+			border-style: solid;
+			border-color: #ccc #eee;
+			border-bottom-style: dotted;
+			font-weight: normal;
+			vertical-align: top;
+			height: auto;
+			width: 84px;
+		}
+		
+		.keBorder th{
+			border-width: 0 1px 1px 0;
+			border-style: solid;
+			border-color: #ccc #eee;
+			border-bottom-style: dotted;
+			font-weight: normal;
+			vertical-align: top;
+			height: auto;
+			width: 84px;
+		}
+		.rsAlt{
+			border:1px;
+			border-color: #ccc #eee;
+			border-bottom-style: solid;
+		}
+
+		.dinhDangGio{
+			text-align: right;
+		}
+
+		.rsAmPm{
+			font-size: 15px;
+			font-weight: normal;
+			line-height: 10px;
+			text-transform: lowercase;
+			position: relative;
+			top: -4px;
+			padding: 0 1px;
+		}
