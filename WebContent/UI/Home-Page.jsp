@@ -14,6 +14,11 @@
 		<div id="sidebar">
 			<div id="content">
 				<div id="content_Left">
+					
+					<div class="User">
+						<p>Phan Van hoi</p>
+					</div>
+					
 					<div class="accordion2" id="area-leftmenu">
 						<p class='item' class='he'>Thông tin Cá nhân</p>
 						<ul>
