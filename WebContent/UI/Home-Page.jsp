@@ -14,11 +14,11 @@
 		<div id="sidebar">
 			<div id="content">
 				<div id="content_Left">
-					
+
 					<div class="User">
 						<p>Phan Van hoi</p>
 					</div>
-					
+
 					<div class="accordion2" id="area-leftmenu">
 						<p class='item' class='he'>Thông tin Cá nhân</p>
 						<ul>
@@ -54,7 +54,8 @@
 						<ul>
 							<li><a href='#'> <span>Đăng ký Môn học</span>
 							</a></li>
-							<li><a href='../Css/HomePage.css'> <span>Đăng ký Lịch giả định</span>
+							<li><a href='ChooseYear.jsp'> <span>Đăng ký Lịch
+										giả định</span>
 							</a></li>
 							<li><a href='#'><span>Bảng điểm</span> </a></li>
 							<li><a href='#'> <span>Chương Trình học</span>
@@ -563,7 +564,7 @@
 									<!-- Hết 10h -->
 								</table>
 							</td>
-							
+
 							<td>
 								<div class="ThDetail" style="width: 100%; height: 1223px">
 									<table style="width: 100%; height: 1223px">
@@ -582,7 +583,7 @@
 								</div>
 							</td>
 						</tr>
-						
+
 					</table>
 				</div>
 			</div>
@@ -590,7 +591,7 @@
 			<div id="footer"></div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$(".accordion2 p").click(function () {

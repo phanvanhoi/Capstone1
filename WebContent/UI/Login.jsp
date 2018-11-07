@@ -1,0 +1,248 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Đăng nhập để đăng ký lịch giả định</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<link rel="Shortcut Icon" href="images/DTU.ICO" type="image/x-icon" />
+	<style type="text/css">
+		#box-captcha {
+			padding: 0 !important;
+		}
+		
+		.floatbox {
+			float: left;
+			background-color: transparent !important;
+			padding: 0 !important;
+			margin-top: -1px;
+		}
+		
+		.captcha {
+			text-transform: uppercase;
+		}
+		
+		.floatbox img {
+			width: 120px;
+			height: 22px;
+			margin-top: 2px !important;
+			margin-left: 4px;
+		}
+		
+		.captcha_f5 {
+			cursor: pointer;
+			float: right;
+			margin-top: 6px;
+		}
+		
+		#form .btn {
+			bottom: 11px;
+			right: 20px;
+		}
+		
+		#Container {
+			padding: 0 !important;
+			position: relative;
+			float: right;
+		}
+		
+		#UpdatePanel1 {
+			padding: 0 !important;
+			float: right;
+			width: 130px;
+		}
+	</style>
+	<link type="text/css" href="../Data/js/jquery/themes/base/jquery-ui.css" rel="stylesheet" />
+	<link type="text/css" href="../Data/MasterPages/css/reset.css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="../Data/MasterPages/popup_js/css/style.css" />
+	<link href='../Data/MasterPages/css/login.css' type='text/css' rel='stylesheet' />
+	<script type="text/javascript" src="../Data/js/md5.js"></script>
+	<script src="../Data/js/nt_script_util.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="../Data/js/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../Data/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../Data/js/jquery/jquery.form.js"></script>
+
+	<script type="text/javascript" src="Scripts/ui.core.js"></script>
+	<script type="text/javascript" src="Scripts/ui.sortable.js"></script>
+
+	<script src="Content/js/url_endcode_decode.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+        function AutoSetObjectType() {            
+            console.log("hidObjectType=" + $("#hidObjectType").val());
+            console.log("hidFaculty=" + $("#hidFaculty").val());
+            if ($("#hidObjectType").val() == "sv") {                
+                $(".faculty-dept").hide();
+            } else {                
+                $(".faculty-dept").show();
+                $(".object-type li").each(function () {
+                    $(this).removeClass("active");
+                });
+                document.getElementById($("#hidObjectType").val()).checked = true;
+                $("#li" + $("#hidObjectType").val()).addClass("active");
+            }
+            //
+            $("#cboFaculty").change(function () {
+                console.log("hidObjectType=" + $("#hidObjectType").val());
+                var val = $(this).val();
+                console.log("hidFaculty=" + val);
+                $("#hidFaculty").val(val);
+            });
+        }
+    </script>
+	<script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-26395110-6', 'auto');
+        ga('send', 'pageview');        
+    </script>
+
+</head>
+<body>
+	<div id="main-panel">
+		<form name="form_login1" method="post" id="form_login1"
+			autocomplete="off" width="100%" height="100%">
+			<div id="updProgress" class="clickSignIn" style="display: none;">
+				<img src="../images/ajax-loader-1.gif" /> Đang đăng nhập...
+			</div>
+
+			<div id="UpdatePassUpdatePanel">
+				<div id="panel">
+					<div class="screen">
+						<img src="MasterPages/images/phone-screen.png" class="mobile"
+							alt="" title="View Mobile Devices Screen" /> <img
+							src="MasterPages/images/desktop_screen3.png" class="desktop"
+							alt="" title="View Desktop Screen" />
+					</div>
+					<div id="login">
+						<div id="top">
+							<div id="logo">
+								<a href="#"> Đại học Duy Tân</a>
+							</div>
+							<div id="language">
+
+								<a class="forgotpass" href="#" target="_blank"
+									title="Quên Mật khẩu?"> Quên Mật khẩu?</a> <a class="feedback"
+									href="#" target="_blank" title="Gửi Góp ý"> Góp ý</a> <a
+									class="vn active" href='#' title="Tiếng Việt">Tiếng Việt</a> <a
+									class="en" href="#" title="English language">English</a>
+							</div>
+						</div>
+						<div id="main">
+							<div id="application">
+								<ul>
+									<li class="title">Đăng nhập với:</li>
+									<li class="portal"><input value="1" name="radType"
+										type="radio" id="Radio1" checked="checked" /> <span
+										id="Span1">Portal</span></li>
+									<li class="gmail"><input value="2" name="radType"
+										type="radio" id="Radio2" /> <span id="Span2">Gmail</span></li>
+									<li class="elearning"><input value="3" name="radType"
+										type="radio" id="Radio3" /> <span id="Span3">Learning</span></li>
+									<li class="forum"><input value="4" name="radType"
+										type="radio" id="Radio4" /> <span id="Span4">Diễn đàn</span></li>
+									<li class="elib"><input value="5" name="radType"
+										type="radio" id="Radio5" /> <span id="Span5">Thư viện</span>
+									</li>
+								</ul>
+							</div>
+							<div id="option">
+								<ul>
+									<li class="fixed1"><span class="gmail"></span> @dtu.edu.vn</li>
+									<li class="fixed"><span class="elearning"></span> Learning</li>
+									<li><span class="dangky"></span> Đăng ký Môn học</li>
+									<li class="fixed1"><span class="thongbao"></span> Thông
+										báo</li>
+									<li class="fixed"><span class="tuvanhoctap"></span> Thư
+										viện</li>
+									<li><span class="hocphi"></span> Học phí</li>
+									<li class="fixed1"><span class="lichhoc"></span> Lịch Cá
+										nhân</li>
+									<li class="fixed"><span class="forum"></span> Diễn đàn</li>
+									<li><span class="bangdiem"></span> Bảng điểm</li>
+								</ul>
+							</div>
+							
+							<div id="form">
+
+								<div class="username">
+									<span> Tên Đăng nhập:</span> <input name="txtUser" type="text"
+										maxlength="50" id="txtUser" tabindex="1" class="txt"
+										autocomplete="off" placeholder="Nhập Tên đăng nhập" /> <input
+										type="hidden" name="hdPass" id="hdPass" /> <input
+										type="hidden" name="valChecked" id="valChecked" />
+								</div>
+
+								<div class="pass">
+									<span> Mật khẩu:</span> <input name="txtPass" type="password"
+										id="txtPass" tabindex="2" class="txt"
+										onfocus="if(this.value!=&#39;&#39;) this.value=&#39;&#39;;"
+										onblur="if(this.value==&#39;&#39;) this.value=&#39;Nhập mật khẩu&#39;;"
+										autocomplete="off" placeholder="Nhập Mật khẩu" />
+								</div>
+
+								<div class="forgetpass">
+
+									<div class="button">
+										<input type="submit" name="btnLogin1" value="" id="btnLogin1"
+											tabindex="4" class="btn" title="Nhấn Enter để tiếp tục"
+											class="en" /> <span class="btn-responsive"></span>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div id="copyright">
+								<span> Copyright&copy; 2018 <a
+									href='http://duytan.edu.vn' target='_blank'>Đại học Duy Tân</a>.
+									<input type="hidden" name="HiddenField1" id="HiddenField1" />
+								</span> <span id="lbMessage"
+									style="float: right; margin-right: 30px; font-color: red">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<input type="submit" name="btnSetMobileScreen" value="Mobile Screen"
+					onclick="" id="btnSetMobileScreen" style="display: none" /> <input
+					type="submit" name="btnSetDesktopScreen" value="Desktop Screen"
+					onclick="" id="btnSetDesktopScreen" style="display: none" />
+
+
+			</div>
+		</form>
+	</div>
+
+
+	<script type="text/javascript">        
+        $(document).ready(function () {             
+            var lang = 'vn';
+            if (lang != 'vn') {
+                $('#btnLogin1').removeClass('vn').addClass('en');
+            } else {
+                $('#btnLogin1').removeClass('en').addClass('vn');
+            } 
+        }); 
+    </script>
+	<script type="text/javascript">
+    	$(document).ready(function () {
+    		$('#btnLogin1').click(function() {
+    			var txtUser = $('#txtUser').val();
+    			var txtPass = $('#txtPass').val();
+    			alert(txtUser + txtPass);
+    		});
+    	});
+    </script>
+	<div
+		style="position: fixed; bottom: 0; text-align: center; color: #8398BA">
+		<span id="lblVersion"></span>
+	</div>
+
+</body>
+</html>
