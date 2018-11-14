@@ -5,8 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Home Page</title>
-<link rel="stylesheet" href="../Css/HomePage.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/HomePage.css">
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<!--Fontawesome CDN-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous">
+
 </head>
 <body>
 	<div id="container">
@@ -16,8 +28,7 @@
 				<div id="content_Left">
 
 					<div class="User">
-						<span class="glyphicon glyphicon-user"></span>
-						<p>${loginedUser.userName}</p>
+						<span class="input-group-text"><i class="fas fa-user"></i>${Student.getNameStudent()}</span>
 					</div>
 
 					<div class="accordion2" id="area-leftmenu">
@@ -55,8 +66,9 @@
 						<ul>
 							<li><a href='#'> <span>Đăng ký Môn học</span>
 							</a></li>
-							<li><a href='ChooseYear.jsp'> <span>Đăng ký Lịch
-										giả định</span>
+							<li><a
+								href='${pageContext.request.contextPath}/ChooseYearsServlet'>
+									<span>Đăng ký Lịch giả định</span>
 							</a></li>
 							<li><a href='#'><span>Bảng điểm</span> </a></li>
 							<li><a href='#'> <span>Chương Trình học</span>
@@ -186,12 +198,7 @@
 												7 <span class="rsAmPm">SA</span>
 											</div>
 										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
+									</tr>									
 									<tr style="height: 15px;">
 										<th>
 											<div>&nbsp;</div>
@@ -209,11 +216,6 @@
 											<div class="dinhDangGio">
 												8 <span class="rsAmPm">SA</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -240,11 +242,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -257,11 +254,6 @@
 											<div class="dinhDangGio">
 												10 <span class="rsAmPm">SA</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -288,11 +280,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -305,11 +292,6 @@
 											<div class="dinhDangGio">
 												12 <span class="rsAmPm">CH</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -336,11 +318,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -353,11 +330,6 @@
 											<div class="dinhDangGio">
 												2 <span class="rsAmPm">CH</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -384,11 +356,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -401,11 +368,6 @@
 											<div class="dinhDangGio">
 												4 <span class="rsAmPm">CH</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -432,11 +394,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -449,11 +406,6 @@
 											<div class="dinhDangGio">
 												6 <span class="rsAmPm">CH</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -480,11 +432,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -497,11 +444,6 @@
 											<div class="dinhDangGio">
 												8 <span class="rsAmPm">CH</span>
 											</div>
-										</th>
-									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
 										</th>
 									</tr>
 									<tr style="height: 15px;">
@@ -528,11 +470,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -552,11 +489,6 @@
 											<div>&nbsp;</div>
 										</th>
 									</tr>
-									<tr style="height: 15px;">
-										<th>
-											<div>&nbsp;</div>
-										</th>
-									</tr>
 									<tr class="rsAlt" style="height: 15px;">
 										<th>
 											<div class="rsAlt">&nbsp;</div>
@@ -567,30 +499,27 @@
 							</td>
 
 							<td>
-								<div class="ThDetail" style="width: 100%; height: 1223px">
-									<table style="width: 100%; height: 1223px">
-										<tbody>
-											<tr>
-												<td id="thu2"></td>
-												<td id="thu3"></td>
-												<td id="thu4"></td>
-												<td id="thu5"></td>
-												<td id="thu6"></td>
-												<td id="thu7"></td>
-												<td id="cn"></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+								<table style="width: 100%; height: 100%">
+									<tbody>
+										<tr>
+											<td id="thu2"></td>
+											<td id="thu3"></td>
+											<td id="thu4"></td>
+											<td id="thu5"></td>
+											<td id="thu6"></td>
+											<td id="thu7"></td>
+											<td id="cn"></td>
+										</tr>
+									</tbody>
+								</table>
 							</td>
 						</tr>
 
 					</table>
 				</div>
 			</div>
-
-			<div id="footer"></div>
 		</div>
+		<div id="footer"></div>
 	</div>
 
 	<script type="text/javascript">

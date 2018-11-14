@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebContent/Css/TimeTableAsssumes.css=UTF-8
+encoding//WebContent/UI/Login.jsp=UTF-8
+encoding//src/Connection/SQLServerConnUtils_SQLJDBC.java=UTF-8
+encoding//src/Servlet/HomeServlet.java=UTF-8
+encoding//src/Servlet/JDBCFilter.java=UTF-8
+encoding//src/Servlet/LoginServlet.java=UTF-8
+encoding//src/jdbc/ODBCConnUtils.java=UTF-8
+encoding//src/jdbc/SQLServerConnUtils_JTDS.java=UTF-8
+encoding//src/jdbc/SQLServerConnUtils_SQLJDBC.java=UTF-8
+encoding//src/jdbc/TestCn.java=UTF-8
+encoding//src/utils/MyUtils.java=UTF-8
